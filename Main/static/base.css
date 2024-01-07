@@ -10,3 +10,9 @@ body{
     border: black solid 5px;
     border-radius: 10px;
 }
+
+.notice{
+    border: red 5px dashed;
+    border-radius: 7px;
+    padding: 15px;
+}
