@@ -5,3 +5,8 @@ body{
 #navbar_wrapper{
     background-color: aliceblue;
 }
+
+.container-lg{
+    border: black solid 5px;
+    border-radius: 10px;
+}
