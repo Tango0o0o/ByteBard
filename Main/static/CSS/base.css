@@ -5,12 +5,17 @@ body{
     margin: 0px; /* Removes all margins, so the navbar can stick to the top*/
 }
 
+.navbar{
+    position: sticky; /* Stick it to the top of the screen */
+    top: 0px; /* The distance from the top when it becomes sticky (0px meaning straight away */
+}
+
 .navbar ul{
     list-style-type: none; /* Remove the bullets in the list*/
     background-color: #f7fff9; /* pastel green to match alice blue */
     padding: 0px; /* Take away all the padding around the ul */
     margin: 0px; /* And the margin */
-    overflow: hidden; /* If the list goes bigger than the navbar, then don't show it */
+    overflow: scroll; /* If the list goes bigger than the navbar, then don't show it */
 }
 
 .navbar a{
@@ -22,7 +27,7 @@ body{
     border-right: 2px aliceblue solid; /* To separate each button on the navbar */
     height: 25px; 
 }
-/* HOMEPAGE*/
+
 .navbar a:hover{ /* Change of background colour when you hover over the mouse */
     background-color: aliceblue; /* Nice tranistion to the main bacground colout */
     transition: 1s; /* Fade effect */
@@ -42,4 +47,8 @@ main{
 
 hr{
     opacity: 0.5; 
+}
+
+ul::-webkit-scrollbar { /* For more modern popular browsers */
+    display: none; /* Hides the scrollbar */
 }
