@@ -1,0 +1,45 @@
+body{
+    background-color: aliceblue; /* Main colour gonna be used*/
+    font-family: 'Roboto', sans-serif;  /* Leaving this for now, maybe will make it better */
+    color: black; /* Makes sense to have black*/
+    margin: 0px; /* Removes all margins, so the navbar can stick to the top*/
+}
+
+.navbar ul{
+    list-style-type: none; /* Remove the bullets in the list*/
+    background-color: #f7fff9; /* pastel green to match alice blue */
+    padding: 0px; /* Take away all the padding around the ul */
+    margin: 0px; /* And the margin */
+    overflow: hidden; /* If the list goes bigger than the navbar, then don't show it */
+}
+
+.navbar a{
+    text-decoration: none; /* Remove underline from the links */
+    padding: 15px 25px 15px 25px; /* Make it look a bit bigger */
+    display: block; /* Giving each link the full width of its container on a new line as well */ 
+    text-align: center; /* Centering the text */
+    float: left; /*Setting all the elements on the same line*/
+    border-right: 2px aliceblue solid; /* To separate each button on the navbar */
+    height: 25px; 
+}
+/* HOMEPAGE*/
+.navbar a:hover{ /* Change of background colour when you hover over the mouse */
+    background-color: aliceblue; /* Nice tranistion to the main bacground colout */
+    transition: 1s; /* Fade effect */
+}
+
+.navbar img{
+    width: 25px; 
+    height: 25px; /* This pretty much sets the height of the navbar */
+    text-align: center; /* center the logo */
+}
+
+main{
+    width: 80%; /* Leave the sides out a bit */
+    border: 5px black solid; /* Just to visuialse the space i have to work with */
+    margin: 2% 0% 0% 8%; /* Move it away from the navbar and the left side */
+}
+
+hr{
+    opacity: 0.5; 
+}
