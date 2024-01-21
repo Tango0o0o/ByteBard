@@ -1,5 +1,8 @@
 from django.shortcuts import render, HttpResponse
 from django.template import loader
+from django.shortcuts import render
+from django.contrib.auth.forms import UserCreationForm
+from .forms import CreateUserForm
 # Create your views here.
 
 def home(req):
@@ -10,5 +13,11 @@ def login(req):
     return HttpResponse("lOGIN")
 
 def register(req):
-    template = loader.get_template('registration/Register.html')
-    return HttpResponse(template.render())
+    
+    if req.method == "POST":
+        form = CreateUserForm(req.POST)
+        if form.is_valid():
+            form.save()
+
+    form = CreateUserForm()
+    return render(req, 'registration/Register.html', {"form":form})

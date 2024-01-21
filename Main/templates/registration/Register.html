@@ -5,15 +5,30 @@ ByteBard | Register
 {%endblock%}
 
 {%block head%}
-    <link rel="stylesheet" rel="text/css" href="/static/CSS/home.css">
+    <link rel="stylesheet" rel="text/css" href="/static/CSS/register.css">
 {% endblock %}
 
 
 {%block content_title%} Register for ByteBard {%endblock%}
 
-
 {% block content %}
+<div class="wrapper">
+
+    <form method="POST" action="">
+        {% csrf_token %}
 
 
+
+        <div class="fieldwrapper">
+            <span class="form-label">{{form.username.label}}</span>
+            <div>{{form.username}}</div>
+        </div>
+        <input type="submit" name="create-user">
+
+
+   
+
+    </form>
+</div>
 
 {% endblock %}
