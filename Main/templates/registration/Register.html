@@ -12,23 +12,34 @@ ByteBard | Register
 {%block content_title%} Register for ByteBard {%endblock%}
 
 {% block content %}
-<div class="wrapper">
+<form method="POST" action="" class="wrapper">
+    {% csrf_token %}
 
-    <form method="POST" action="">
-        {% csrf_token %}
+    <div class="fieldwrapper">
+        {{form.username}}
+    </div>
+    
+    <div class="fieldwrapper">
+        {{form.first_name}}
+    </div>
 
+    <div class="fieldwrapper">
+        {{form.last_name}}
+    </div>
 
+    <div class="fieldwrapper">
+        {{form.email}}
+    </div>
 
-        <div class="fieldwrapper">
-            <span class="form-label">{{form.username.label}}</span>
-            <div>{{form.username}}</div>
-        </div>
-        <input type="submit" name="create-user">
+    <div class="fieldwrapper">
+        {{form.password1}}
+    </div>
 
-
-   
-
-    </form>
-</div>
+    <div class="fieldwrapper">
+        {{form.password2}}
+    </div>
+    <br>
+    <input type="submit" name="create-user">
+</form>
 
 {% endblock %}

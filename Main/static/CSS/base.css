@@ -1,6 +1,6 @@
 body{
     background-color: aliceblue; /* Main colour gonna be used*/
-    font-family: 'Roboto', sans-serif;  /* Leaving this for now, maybe will make it better */
+    font-family: 'Lato';  /* Leaving this for now, maybe will make it better */
     color: black; /* Makes sense to have black*/
     margin: 0px; /* Removes all margins, so the navbar can stick to the top*/
 }
@@ -41,7 +41,6 @@ body{
 
 main{
     width: 80%; /* Leave the sides out a bit */
-    border: 5px black solid; /* Just to visuialse the space i have to work with */
     margin: 2% 0% 0% 8%; /* Move it away from the navbar and the left side */
 }
 
