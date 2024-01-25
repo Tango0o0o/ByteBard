@@ -6,7 +6,8 @@
     width: 60%;
     grid-column-start: 1;
     grid-column-end: 6;
-    font-size: large;
+    font-size: medium;
+    font-family: 'Montserrat', sans-serif;;
 }
 
 .form-input:hover{

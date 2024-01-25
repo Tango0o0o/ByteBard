@@ -1,6 +1,6 @@
 body{
     background-color: aliceblue; /* Main colour gonna be used*/
-    font-family: 'Lato';  /* Leaving this for now, maybe will make it better */
+    font-family: 'Montserrat', sans-serif;  /* Leaving this for now, maybe will make it better */
     color: black; /* Makes sense to have black*/
     margin: 0px; /* Removes all margins, so the navbar can stick to the top*/
 }
