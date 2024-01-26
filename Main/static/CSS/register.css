@@ -3,23 +3,31 @@
     border-color: #cccccc;
     border-radius: 4px;
     height: 40px;
-    width: 60%;
-    grid-column-start: 1;
-    grid-column-end: 6;
     font-size: medium;
     font-family: 'Montserrat', sans-serif;;
 }
 
 .form-input:hover{
-    background-color: aliceblue;
+    background-color: rgb(240, 248, 255);
     transition: 1s;
 }
 
 .wrapper{
-    margin-left: 25%;
-    border: 5px black solid;
-    width: 50%;
     display: grid;
-    row-gap: 25px;
-    grid-template-columns: auto;
+    row-gap: 25px; /* Vertical gap between each item */
+    grid-template-columns: auto; /* One item per colum */
+    background-color: rgb(236, 246, 255); /* Slightly different colour, good looking but able to tell it's different */
+
+    /* Spacing top + bottom */
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    /* Nice thin looking border */
+    border-color: #cccccc;
+    border-radius: 4px;
+    border-width: 2px;
+
+    /* Centering the items */
+    justify-content: center; 
+    align-items: center;
 }
