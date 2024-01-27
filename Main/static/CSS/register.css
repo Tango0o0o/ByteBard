@@ -4,7 +4,7 @@
     width: 75%; /* Default width */
     display: block; /* So each item has its full width to play with */
 }
-
+/* rgb(236, 246, 255) for matching alice blue*/
 .form-input{
     border-style: groove; /* looks normal but different idk */
     border-color: #cccccc; /*gray*/
@@ -12,6 +12,7 @@
     height: 40px;
     font-size: medium; /* Fills it not too much but big enough to read */
     padding-left: 15px;
+    box-sizing: border-box; /* So it stays the same size even with padding */
 }
 
 .form-input:hover{
@@ -26,8 +27,8 @@
 
 .wrapper{
     margin: auto; /* Horizontally centering the form */
-    width: 600px; /* Default width to be 600px */
-    min-width: 60%; /* Must take up at least 60% up for bigger screens */
+    width: 40ch; /* 40 "characters" wide */
+   /* min-width: 60%; /* Must take up at least 60% up for bigger screens */
     max-width: 100%; /* Don't go wider than the screen width */
 
     display: grid; /* Easy to position items */
@@ -49,4 +50,9 @@
 
 h1{
     text-align: center; /* Look good */
+}
+
+.wrapper div:nth-child(10), /* Changing the gap between the 10th and 11th elements (last input and submit button) */ 
+.wrapper div:nth-child(11) {
+  row-gap: 10px; /* Adjust the gap as needed */
 }

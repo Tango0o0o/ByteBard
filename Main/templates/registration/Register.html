@@ -15,21 +15,25 @@ ByteBard | Register
 <form method="POST" action="" class="wrapper">
     {% csrf_token %}
 
-    <h1>Register for ByteBard</h1>
+    <h1>Create your ByteBard account</h1>
     <hr>
 
-    {{form.username}}
 
     {{form.first_name}}
 
     {{form.last_name}}
 
+    <br>
+
+    {{form.username}}
+
     {{form.email}}
+
+    <br>
 
     {{form.password1}}
 
     {{form.password2}}
-    <br>
 
     <input type="submit" name="create-user" class="submit-btn">
 </form>

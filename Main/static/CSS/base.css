@@ -56,14 +56,14 @@ ul::-webkit-scrollbar { /* For more modern popular browsers */
 }
 
 .submit-btn{
-    background-color: #34db50;
+    background-color: #08946c;
     border: none;
     border-radius: 4px;
     color: white;
 }
 
 .submit-btn:hover{
-    background-color: #39c350;
+    background-color: #08cb94;
     transition: 1s;
     cursor: pointer;
 }
