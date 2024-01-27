@@ -1,8 +1,11 @@
 body{
     background-color: aliceblue; /* Main colour gonna be used*/
-    font-family: 'Montserrat', sans-serif;  /* Leaving this for now, maybe will make it better */
     color: black; /* Makes sense to have black*/
     margin: 0px; /* Removes all margins, so the navbar can stick to the top*/
+}
+
+*{ 
+    font-family: 'Montserrat', sans-serif; /* Everything has this font */
 }
 
 .navbar{
@@ -50,4 +53,17 @@ hr{
 
 ul::-webkit-scrollbar { /* For more modern popular browsers */
     display: none; /* Hides the scrollbar */
+}
+
+.submit-btn{
+    background-color: #34db50;
+    border: none;
+    border-radius: 4px;
+    color: white;
+}
+
+.submit-btn:hover{
+    background-color: #39c350;
+    transition: 1s;
+    cursor: pointer;
 }

@@ -15,31 +15,23 @@ ByteBard | Register
 <form method="POST" action="" class="wrapper">
     {% csrf_token %}
 
-    <div class="fieldwrapper">
-        {{form.username}}
-    </div>
-    
-    <div class="fieldwrapper">
-        {{form.first_name}}
-    </div>
+    <h1>Register for ByteBard</h1>
+    <hr>
 
-    <div class="fieldwrapper">
-        {{form.last_name}}
-    </div>
+    {{form.username}}
 
-    <div class="fieldwrapper">
-        {{form.email}}
-    </div>
+    {{form.first_name}}
 
-    <div class="fieldwrapper">
-        {{form.password1}}
-    </div>
+    {{form.last_name}}
 
-    <div class="fieldwrapper">
-        {{form.password2}}
-    </div>
+    {{form.email}}
+
+    {{form.password1}}
+
+    {{form.password2}}
     <br>
-    <input type="submit" name="create-user">
+
+    <input type="submit" name="create-user" class="submit-btn">
 </form>
 
 {% endblock %}

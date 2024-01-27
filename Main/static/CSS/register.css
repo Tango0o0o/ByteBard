@@ -1,10 +1,11 @@
+
+
 .form-input{
-    border-style: groove;
-    border-color: #cccccc;
+    border-style: groove; /* looks normal but different idk */
+    border-color: #cccccc; /*gray*/
     border-radius: 4px;
     height: 40px;
-    font-size: medium;
-    font-family: 'Montserrat', sans-serif;;
+    font-size: medium; /* Fills it not too much but big enough to read */
 }
 
 .form-input:hover{
@@ -12,10 +13,21 @@
     transition: 1s;
 }
 
+.submit-btn{ /* Styled in base.css */
+    height: 50px;
+    font-size: x-large;
+}
+
 .wrapper{
-    display: grid;
+    margin: auto; /* Horizontally centering the form */
+    width: 600px; /* Default width to be 600px */
+    min-width: 60%; /* Must take up at least 60% up for bigger screens */
+    max-width: 100%; /* Don't go wider than the screen width */
+
+    display: grid; /* Easy to position items */
     row-gap: 25px; /* Vertical gap between each item */
-    grid-template-columns: auto; /* One item per colum */
+    grid-template-columns: auto; /* One item per column */
+
     background-color: rgb(236, 246, 255); /* Slightly different colour, good looking but able to tell it's different */
 
     /* Spacing top + bottom */
@@ -26,8 +38,16 @@
     border-color: #cccccc;
     border-radius: 4px;
     border-width: 2px;
+    border-style: groove;
+}
 
-    /* Centering the items */
-    justify-content: center; 
-    align-items: center;
+.wrapper > *{ /* All items in the grid */
+    max-width: 100%; /* Don't go bigger than container */
+    margin: auto; /* Horizontally centtering */
+    width: 75%; /* Default width */
+    display: block; /* So each item has its full width to play with */
+}
+
+h1{
+    text-align: center; /* Look good */
 }
