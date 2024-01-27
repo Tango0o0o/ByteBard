@@ -1,4 +1,9 @@
-
+.wrapper > *{ /* All items in the grid */
+    max-width: 100%; /* Don't go bigger than container */
+    margin: auto; /* Horizontally centtering */
+    width: 75%; /* Default width */
+    display: block; /* So each item has its full width to play with */
+}
 
 .form-input{
     border-style: groove; /* looks normal but different idk */
@@ -6,6 +11,7 @@
     border-radius: 4px;
     height: 40px;
     font-size: medium; /* Fills it not too much but big enough to read */
+    padding-left: 15px;
 }
 
 .form-input:hover{
@@ -39,13 +45,6 @@
     border-radius: 4px;
     border-width: 2px;
     border-style: groove;
-}
-
-.wrapper > *{ /* All items in the grid */
-    max-width: 100%; /* Don't go bigger than container */
-    margin: auto; /* Horizontally centtering */
-    width: 75%; /* Default width */
-    display: block; /* So each item has its full width to play with */
 }
 
 h1{
