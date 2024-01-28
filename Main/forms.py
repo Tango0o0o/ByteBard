@@ -16,7 +16,7 @@ class CreateUserForm(UserCreationForm):
         self.fields["last_name"].label = "Last name"
 
         for field in self.fields:
-            self.fields[field].widget.attrs.update({"class" : "form-input", "placeholder" : f"{self.fields[field].label.capitalize()}"}) # adding the class "form-input" to every field, to allow CSS changes to be made. Also added placeholder text for the input box
+            self.fields[field].widget.attrs.update({"class" : "form-input", "id" : f"{field}"}) # adding the class "form-input" to every field, to allow CSS changes to be made. Also added placeholder text for the input box
     
     class Meta:
         model = User

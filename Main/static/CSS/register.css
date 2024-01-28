@@ -6,6 +6,7 @@
 }
 /* rgb(236, 246, 255) for matching alice blue*/
 .form-input{
+    display: block;
     border-style: groove; /* looks normal but different idk */
     border-color: #cccccc; /*gray*/
     border-radius: 4px;
@@ -28,12 +29,15 @@
 .wrapper{
     margin: auto; /* Horizontally centering the form */
     width: 40ch; /* 40 "characters" wide */
-   /* min-width: 60%; /* Must take up at least 60% up for bigger screens */
     max-width: 100%; /* Don't go wider than the screen width */
+    height: 600px;
 
-    display: grid; /* Easy to position items */
-    row-gap: 25px; /* Vertical gap between each item */
-    grid-template-columns: auto; /* One item per column */
+    display: flex;
+    flex-direction: column; /* 1 per row */
+    flex-wrap: nowrap; /* Bugs out the centering */
+    justify-content: center; /* Aligns horizontally in the center */
+    align-content: space-between; /* Aligns' the flex lines (row) */
+  
 
     background-color: rgb(236, 246, 255); /* Slightly different colour, good looking but able to tell it's different */
 
@@ -48,11 +52,8 @@
     border-style: groove;
 }
 
-h1{
-    text-align: center; /* Look good */
+
+h1 {
+    text-align: center;
 }
 
-.wrapper div:nth-child(10), /* Changing the gap between the 10th and 11th elements (last input and submit button) */ 
-.wrapper div:nth-child(11) {
-  row-gap: 10px; /* Adjust the gap as needed */
-}
