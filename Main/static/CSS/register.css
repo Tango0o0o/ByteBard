@@ -1,9 +1,27 @@
-.wrapper > *{ /* All items in the grid */
+.wrapper > *{ /* All items chlid to the wrapper */
     max-width: 100%; /* Don't go bigger than container */
     margin: auto; /* Horizontally centtering */
     width: 75%; /* Default width */
     display: block; /* So each item has its full width to play with */
 }
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px; /* For each group, have smaller spacing */
+}
+
+.input-label{
+    position: relative;
+    top: 28px;
+    left: 15px;
+    pointer-events: none;
+}
+
+.input-label:hover{
+    translate: (0px, -20px);
+}
+
 /* rgb(236, 246, 255) for matching alice blue*/
 .form-input{
     display: block;
@@ -14,6 +32,7 @@
     font-size: medium; /* Fills it not too much but big enough to read */
     padding-left: 15px;
     box-sizing: border-box; /* So it stays the same size even with padding */
+    width: 100%;
 }
 
 .form-input:hover{
@@ -24,6 +43,7 @@
 .submit-btn{ /* Styled in base.css */
     height: 50px;
     font-size: x-large;
+    font-weight: bold;
 }
 
 .wrapper{

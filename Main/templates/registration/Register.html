@@ -18,20 +18,26 @@ ByteBard | Register
     <h1>Create your ByteBard account</h1>
     <hr>
 
-    {{form.first_name}}
+    <div class="form-group">
+        
+        <div class="input-group">
+            <label for="first_name" class="input-label">First name</label>
+            {{form.first_name}}
+        </div>
 
-    {{form.last_name}}
-    <br>
+        {{form.last_name}}
+    </div>
 
-    {{form.username}}
+    <div class="form-group">
+        {{form.username}}
+        {{form.email}}
+    </div>
 
-    {{form.email}}
 
-    <br>
-
-    {{form.password1}}
-
-    {{form.password2}}
+    <div class="form-group">
+        {{form.password1}}
+        {{form.password2}}
+    </div>
 
     <input type="submit" name="create-user" class="submit-btn">
 </form>

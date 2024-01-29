@@ -1,3 +1,4 @@
 *.log
 Personal/
 t.py
+__pycache__/
