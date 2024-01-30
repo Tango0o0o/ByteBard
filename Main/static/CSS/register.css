@@ -13,20 +13,16 @@
 
 .input-label{
     position: relative;
-    top: 28px;
     left: 15px;
+    bottom: 30px;
     pointer-events: none;
-}
-
-.input-label:hover{
-    translate: (0px, -20px);
 }
 
 /* rgb(236, 246, 255) for matching alice blue*/
 .form-input{
     display: block;
     border-style: groove; /* looks normal but different idk */
-    border-color: #cccccc; /*gray*/
+    border-color: #f0f0f0; /*gray*/
     border-radius: 4px;
     height: 40px;
     font-size: medium; /* Fills it not too much but big enough to read */
@@ -35,15 +31,39 @@
     width: 100%;
 }
 
-.form-input:hover{
-    background-color: rgb(240, 248, 255);
-    transition: 1s;
+.form-input:focus + label{
+    animation: moveAnimation 0.3s forwards;
 }
+
+.input-group .form-input:valid + label { 
+        animation: moveAnimation 0s forwards;
+    
+}
+
+@keyframes moveAnimation {
+
+    0% {
+        bottom: 30px;
+    }
+
+
+    50% {
+        background-color: white;
+    }
+
+    100% {
+        background-color: white;
+      bottom: 51px;
+      font-size: small;
+    }
+  } /* learn allat shit */
+
 
 .submit-btn{ /* Styled in base.css */
     height: 50px;
     font-size: x-large;
     font-weight: bold;
+
 }
 
 .wrapper{
@@ -59,17 +79,20 @@
     align-content: space-between; /* Aligns' the flex lines (row) */
   
 
-    background-color: rgb(236, 246, 255); /* Slightly different colour, good looking but able to tell it's different */
+    background-color: white; /* Slightly different colour, good looking but able to tell it's different */
 
     /* Spacing top + bottom */
     padding-top: 30px;
     padding-bottom: 30px;
 
     /* Nice thin looking border */
-    border-color: #cccccc;
+    border-color: white;
     border-radius: 4px;
     border-width: 2px;
     border-style: groove;
+
+    box-shadow: 2px 2px;
+
 }
 
 
