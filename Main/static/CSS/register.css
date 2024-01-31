@@ -5,60 +5,6 @@
     display: block; /* So each item has its full width to play with */
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px; /* For each group, have smaller spacing */
-}
-
-.input-label{
-    position: relative;
-    left: 15px;
-    bottom: 30px;
-    pointer-events: none;
-}
-
-/* rgb(236, 246, 255) for matching alice blue*/
-.form-input{
-    display: block;
-    border-style: groove; /* looks normal but different idk */
-    border-color: #f0f0f0; /*gray*/
-    border-radius: 4px;
-    height: 40px;
-    font-size: medium; /* Fills it not too much but big enough to read */
-    padding-left: 15px;
-    box-sizing: border-box; /* So it stays the same size even with padding */
-    width: 100%;
-}
-
-.form-input:focus + label{
-    animation: moveAnimation 0.3s forwards;
-}
-
-.input-group .form-input:valid + label { 
-        animation: moveAnimation 0s forwards;
-    
-}
-
-@keyframes moveAnimation {
-
-    0% {
-        bottom: 30px;
-    }
-
-
-    50% {
-        background-color: white;
-    }
-
-    100% {
-        background-color: white;
-      bottom: 51px;
-      font-size: small;
-    }
-  } /* learn allat shit */
-
-
 .submit-btn{ /* Styled in base.css */
     height: 50px;
     font-size: x-large;
@@ -85,18 +31,68 @@
     padding-top: 30px;
     padding-bottom: 30px;
 
-    /* Nice thin looking border */
-    border-color: white;
-    border-radius: 4px;
-    border-width: 2px;
-    border-style: groove;
+    border-radius: 7px;
 
-    box-shadow: 2px 2px;
+    box-shadow: 0px 0px 1rem rgba(0 0 0 / 0.2); /* "0px 0px" sets the shadow directly behind the element, "1rem" sets the "radius" (size) of the shadow behind it last bit is the colour and transparency*/
 
 }
 
+.form-group { /* Arranging each group of inputs */
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px; /* For each group, have smaller spacing */
+}
+
+.input-label{ /* Setting it inside the input box */
+    position: relative;
+    left: 15px;
+    bottom: 30px;
+    pointer-events: none;
+}
+
+/* rgb(236, 246, 255) for matching alice blue*/
+.form-input{
+    display: block;
+    
+    border-color: #f0f0f0; /*gray*/
+    border-radius: 6px;
+    border-style: groove;
+
+    height: 40px;
+    font-size: medium; /* Fills it not too much but big enough to read */
+    padding-left: 15px;
+    box-sizing: border-box; /* So it stays the same size even with padding */
+    width: 100%;
+}
+
+.form-input:focus + label{ /* Playing the animation floating label to move the label from its placeholder position to label */
+    animation: floating-label 0.3s forwards;
+}
+
+.input-group .form-input:valid + label { /* If the constraints set in the htmt (required) is valid (true) then apply this. */
+    animation: floating-label 0s forwards;
+}
 
 h1 {
     text-align: center;
 }
 
+@keyframes floating-label { /* This is the floating label animation */
+
+    0% {
+        bottom: 30px; /* Start at its default position */
+    }
+
+
+    50% { /* Halfway through turn background white and bold */
+        font-weight: bold;
+        background-color: white;
+    }
+
+    100% { /* Eventually edn the transition at this */
+        background-color: white;
+        bottom: 51px;
+        font-size: small;
+        font-weight: bolder;
+    }
+}
