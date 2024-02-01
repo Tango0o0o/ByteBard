@@ -6,12 +6,13 @@
 }
 
 .submit-btn{ /* Styled in base.css */
-    height: 50px;
     font-size: x-large;
+    height: fit-content;
+    padding: 10px;
     font-weight: bold;
-
+    text-align: center;
 }
-
+/* HASNT BEEN COMMITED AND PUSHED */
 .wrapper{
     margin: auto; /* Horizontally centering the form */
     width: 40ch; /* 40 "characters" wide */
@@ -28,8 +29,8 @@
     background-color: white; /* Slightly different colour, good looking but able to tell it's different */
 
     /* Spacing top + bottom */
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 
     border-radius: 7px;
 
