@@ -1,3 +1,5 @@
+/* https://www.gerireid.com */
+
 .wrapper > *{ /* All items chlid to the wrapper */
     max-width: 100%; /* Don't go bigger than container */
     margin: auto; /* Horizontally centtering */
@@ -12,7 +14,7 @@
     font-weight: bold;
     text-align: center;
 }
-/* HASNT BEEN COMMITED AND PUSHED */
+
 .wrapper{
     margin: auto; /* Horizontally centering the form */
     width: 40ch; /* 40 "characters" wide */
@@ -34,7 +36,8 @@
 
     border-radius: 7px;
 
-    box-shadow: 0px 0px 1rem rgba(0 0 0 / 0.2); /* "0px 0px" sets the shadow directly behind the element, "1rem" sets the "radius" (size) of the shadow behind it last bit is the colour and transparency*/
+    /* "0px 0px" sets the shadow directly behind the element, "1rem" sets the "radius" (size) of the shadow behind it last bit is the colour and transparency*/
+    box-shadow: 0px 0px 1rem rgba(0 0 0 / 0.2);
 
 }
 

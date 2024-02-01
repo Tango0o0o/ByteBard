@@ -16,6 +16,7 @@ def register(req):
     
     if req.method == "POST":
         form = CreateUserForm(req.POST)
+        
         if form.is_valid():
             form.save()
 
