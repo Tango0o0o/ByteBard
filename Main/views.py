@@ -13,12 +13,13 @@ def login(req):
     return HttpResponse("lOGIN")
 
 def register(req):
-    
     if req.method == "POST":
         form = CreateUserForm(req.POST)
         
         if form.is_valid():
             form.save()
+        else:
+            return render(req, 'registration/Register.html', {"form":form})
 
     form = CreateUserForm()
     return render(req, 'registration/Register.html', {"form":form})

@@ -44,7 +44,7 @@
 .form-group { /* Arranging each group of inputs */
     display: flex;
     flex-direction: column;
-    row-gap: 5px; /* For each group, have smaller spacing */
+    row-gap: 3px; /* For each group, have smaller spacing */
 }
 
 .input-label{ /* Setting it inside the input box */
@@ -73,12 +73,29 @@
     animation: floating-label 0.3s forwards;
 }
 
-.input-group .form-input:valid + label { /* If the constraints set in the htmt (required) is valid (true) then apply this. */
+.input-group input:not(:placeholder-shown) ~ label { /* If the placeholders aren't shown (they're nothing), the put in its floating state. */
     animation: floating-label 0s forwards;
 }
 
 h1 {
     text-align: center;
+}
+
+.error-message{
+    color: red;
+}
+
+.error-image{
+    width: 24px;
+    height: 24px;
+    float: left;
+    margin-top: -2px;
+}
+
+.error-wrapper{
+    margin-bottom: 10px;
+    display: flex;
+    align-items: baseline;
 }
 
 @keyframes floating-label { /* This is the floating label animation */

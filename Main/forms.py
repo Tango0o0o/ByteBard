@@ -16,9 +16,16 @@ class CreateUserForm(UserCreationForm):
         self.fields["first_name"].label = "First name"
         self.fields["last_name"].label = "Last name"
 
+        self.fields["email"].error_messages={"invalid" : "Enter a valid email, such as name@example.com"}
+        
+        self.fields["first_name"].widget.attrs.update({"type" : "text", "autofocus" : True})
+        self.fields["last_name"].widget.attrs.update({"type" : "text"})
+
         for field in self.fields:
-            self.fields[field].widget.attrs.update({"class" : "form-input", "id" : f"{field}", "required" : True}) # adding the class "form-input" to every field, to allow CSS changes to be made. Also added placeholder text for the input box
+            self.fields[field].widget.attrs.update({"class" : "form-input", "placeholder" : "", "id" : f"{field}", "required" : True, "minlength" : "1"}) # adding the class "form-input" to every field, to allow CSS changes to be made. Also added placeholder text for the input box
     
+        self.fields["password1"].widget.attrs.update({"minlength" : "8"}) # min password length of 8
+
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', "first_name", "last_name"] # Adding the fields
