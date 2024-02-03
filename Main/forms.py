@@ -12,7 +12,7 @@ class CreateUserForm(UserCreationForm):
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         super().__init__(*args, **kwargs)
         self.fields['password2'].required = False # Password2 isn't needed to make the user (no password confirmation)
-        # labels for fields i added
+        # labels for fields i added 
         self.fields["first_name"].label = "First name"
         self.fields["last_name"].label = "Last name"
 
