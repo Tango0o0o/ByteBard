@@ -16,10 +16,10 @@ class CreateUserForm(UserCreationForm):
         self.fields["first_name"].label = "First name"
         self.fields["last_name"].label = "Last name"
 
-        self.fields["email"].error_messages={"invalid" : "Enter a valid email, such as name@example.com"}
+        self.fields["email"].error_messages={"invalid" : "Enter a valid email, such as name@example.com"} # changing error message
         
-        self.fields["first_name"].widget.attrs.update({"type" : "text", "autofocus" : True})
-        self.fields["last_name"].widget.attrs.update({"type" : "text"})
+        self.fields["first_name"].widget.attrs.update({"type" : "text", "autofocus" : True, "pattern" : "[A-Za-z]+"}) # setting it to only allow lwtter upper and lower case
+        self.fields["last_name"].widget.attrs.update({"type" : "text", "pattern" : "[A-Za-z]+"})
 
         for field in self.fields:
             self.fields[field].widget.attrs.update({"class" : "form-input", "placeholder" : "", "id" : f"{field}", "required" : True, "minlength" : "1"}) # adding the class "form-input" to every field, to allow CSS changes to be made. Also added placeholder text for the input box

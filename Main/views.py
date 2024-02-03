@@ -1,6 +1,6 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
+from django.urls import reverse
 from django.template import loader
-from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
 from .forms import CreateUserForm
 # Create your views here.
@@ -18,6 +18,7 @@ def register(req):
         
         if form.is_valid():
             form.save()
+            return redirect(reverse("home"))
         else:
             return render(req, 'registration/Register.html', {"form":form})
 

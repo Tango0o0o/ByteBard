@@ -69,6 +69,14 @@
     width: 100%;
 }
 
+/* wtf is this, learn this shi at a later date*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
 .form-input:focus + label{ /* Playing the animation floating label to move the label from its placeholder position to label */
     animation: floating-label 0.3s forwards;
 }
@@ -83,19 +91,17 @@ h1 {
 
 .error-message{
     color: red;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    font-size: 15px;
 }
 
-.error-image{
-    width: 24px;
-    height: 24px;
-    float: left;
-    margin-top: -2px;
+.error-message + .form-input { /* The input that comes straight after the message should have red border */
+    border: solid red;
 }
 
-.error-wrapper{
-    margin-bottom: 10px;
-    display: flex;
-    align-items: baseline;
+.error-message + .form-input + .input-label { /* And the label too */
+    color: red;
 }
 
 @keyframes floating-label { /* This is the floating label animation */
