@@ -22,8 +22,10 @@
     <nav class="navbar">
         <ul>
             <li><a href="{% url 'home'%}"><img src="/static/Images/ByteBardLogo.png"></a></li>
-            <li><a href="{% url 'login'%}">Login</a></li>
-            <li><a href="{% url 'register'%}">Register</a></li>
+            {% if not user.is_authenticated %}
+                <li><a href="{% url 'login'%}">Login</a></li>
+                <li><a href="{% url 'register'%}">Register</a></li>
+            {% endif %}
         </ul>
     </nav>
 
@@ -32,4 +34,8 @@
 
         {% endblock %}
     </main>
+
+    {% block scripts %}
+
+    {% endblock %}
 </body>

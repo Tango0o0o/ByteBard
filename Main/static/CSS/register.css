@@ -1,5 +1,4 @@
 /* https://www.gerireid.com */
-
 .wrapper > *{ /* All items chlid to the wrapper */
     max-width: 100%; /* Don't go bigger than container */
     margin: auto; /* Horizontally centtering */
@@ -56,6 +55,20 @@
 
 /* rgb(236, 246, 255) for matching alice blue*/
 .form-input{
+    display: block;
+    
+    border-color: #f0f0f0; /*gray*/
+    border-radius: 6px;
+    border-style: groove;
+
+    height: 40px;
+    font-size: medium; /* Fills it not too much but big enough to read */
+    padding-left: 15px;
+    box-sizing: border-box; /* So it stays the same size even with padding */
+    width: 100%;
+}
+
+.form-input1{
     display: block;
     
     border-color: #f0f0f0; /*gray*/
