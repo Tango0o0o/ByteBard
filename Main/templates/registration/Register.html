@@ -5,15 +5,93 @@ ByteBard | Register
 {%endblock%}
 
 {%block head%}
-    <link rel="stylesheet" rel="text/css" href="/static/CSS/home.css">
+    <link rel="stylesheet" rel="text/css" href="/static/CSS/register.css">
 {% endblock %}
 
-
-{%block content_title%} Register for ByteBard {%endblock%}
 
 
 {% block content %}
 
+<form method="POST" action="" class="wrapper">
+    {% csrf_token %}
 
 
+    <h1>Create your ByteBard account</h1>
+    <hr>
+
+    <div class="form-group">
+        
+        <div class="input-group">
+            {% if form.first_name.errors %}
+                {% for error in form.first_name.errors %}
+                    <div class="error-message">
+                        <strong>{{ error|escape }}</strong>
+                    </div>                  
+                {% endfor %}
+            {% endif %}
+            {{form.first_name}}
+            <label class="input-label" id="input-label-first_name">First name</label>
+        </div>
+
+        <div class="input-group">
+            {% if form.last_name.errors %}
+                {% for error in form.last_name.errors %}
+                    <div class="error-message">
+                        <strong>{{ error|escape }}</strong>
+                    </div>                  
+                {% endfor %}
+            {% endif %}
+            {{form.last_name}}
+            <label class="input-label" id="input-label-last_name">Last name</label>
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        <div class="input-group">
+            {% if form.username.errors %}
+                {% for error in form.username.errors %}
+                    <div class="error-message">
+                        <strong>{{ error|escape }}</strong>
+                    </div>                  
+                {% endfor %}
+            {% endif %}
+            {{form.username}}
+            <label class="input-label" id="input-label-username">Username</label>
+        </div>
+
+        <div class="input-group">
+            {% if form.email.errors %}
+                {% for error in form.email.errors %}
+                    <div class="error-message">
+                        <strong>{{ error|escape }}</strong>
+                    </div>                  
+                {% endfor %}
+            {% endif %}
+            {{form.email}}
+            <label class="input-label" id="input-label-email">Email</label>
+        </div>
+    </div>
+
+    <div class="input-group">
+        {% if form.password1.errors %}
+            {% for error in form.password1.errors %}
+                <div class="error-message">
+                    <strong>{{ error|escape }}</strong>
+                </div>                  
+            {% endfor %}
+        {% endif %}
+        {{form.password1}}
+        <label class="input-label" id="input-label-password">Password</label>
+    </div>
+
+
+    <button class="submit-btn" type="submit">Sign up for ByteBard</button>
+
+</form>
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="/static/Javascript/register.js"></script>
 {% endblock %}

@@ -1,0 +1,138 @@
+/* https://www.gerireid.com */
+.wrapper > *{ /* All items chlid to the wrapper */
+    max-width: 100%; /* Don't go bigger than container */
+    margin: auto; /* Horizontally centtering */
+    width: 75%; /* Default width */
+    display: block; /* So each item has its full width to play with */
+}
+
+.submit-btn{ /* Styled in base.css */
+    font-size: x-large;
+    height: fit-content;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.wrapper{
+    margin: auto; /* Horizontally centering the form */
+    width: 40ch; /* 40 "characters" wide */
+    max-width: 100%; /* Don't go wider than the screen width */
+    height: 600px;
+
+    display: flex;
+    flex-direction: column; /* 1 per row */
+    flex-wrap: nowrap; /* Bugs out the centering */
+    justify-content: center; /* Aligns horizontally in the center */
+    align-content: space-between; /* Aligns' the flex lines (row) */
+  
+
+    background-color: white; /* Slightly different colour, good looking but able to tell it's different */
+
+    /* Spacing top + bottom */
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    border-radius: 7px;
+
+    /* "0px 0px" sets the shadow directly behind the element, "1rem" sets the "radius" (size) of the shadow behind it last bit is the colour and transparency*/
+    box-shadow: 0px 0px 1rem rgba(0 0 0 / 0.2);
+
+}
+
+.form-group { /* Arranging each group of inputs */
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px; /* For each group, have smaller spacing */
+}
+
+.input-label{ /* Setting it inside the input box */
+    position: relative;
+    left: 15px;
+    bottom: 30px;
+    pointer-events: none;
+}
+
+/* rgb(236, 246, 255) for matching alice blue*/
+.form-input{
+    display: block;
+    
+    border-color: #f0f0f0; /*gray*/
+    border-radius: 6px;
+    border-style: groove;
+
+    height: 40px;
+    font-size: medium; /* Fills it not too much but big enough to read */
+    padding-left: 15px;
+    box-sizing: border-box; /* So it stays the same size even with padding */
+    width: 100%;
+}
+
+.form-input1{
+    display: block;
+    
+    border-color: #f0f0f0; /*gray*/
+    border-radius: 6px;
+    border-style: groove;
+
+    height: 40px;
+    font-size: medium; /* Fills it not too much but big enough to read */
+    padding-left: 15px;
+    box-sizing: border-box; /* So it stays the same size even with padding */
+    width: 100%;
+}
+
+/* wtf is this, learn this shi at a later date*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.form-input:focus + label{ /* Playing the animation floating label to move the label from its placeholder position to label */
+    animation: floating-label 0.3s forwards;
+}
+
+.input-group input:not(:placeholder-shown) ~ label { /* If the placeholders aren't shown (they're nothing), the put in its floating state. */
+    animation: floating-label 0s forwards;
+}
+
+h1 {
+    text-align: center;
+}
+
+.error-message{
+    color: red;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.error-message + .form-input { /* The input that comes straight after the message should have red border */
+    border: solid red;
+}
+
+.error-message + .form-input + .input-label { /* And the label too */
+    color: red;
+}
+
+@keyframes floating-label { /* This is the floating label animation */
+
+    0% {
+        bottom: 30px; /* Start at its default position */
+    }
+
+
+    50% { /* Halfway through turn background white and bold */
+        font-weight: bold;
+        background-color: white;
+    }
+
+    100% { /* Eventually edn the transition at this */
+        background-color: white;
+        bottom: 51px;
+        font-size: small;
+        font-weight: bolder;
+    }
+}

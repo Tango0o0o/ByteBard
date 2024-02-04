@@ -6,7 +6,7 @@
     <link rel="icon" href="/static/Images/ByteBardLogo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     {% load static %}
     <link rel="stylesheet" rel="text/css" href="/static/CSS/base.css">
     
@@ -22,16 +22,20 @@
     <nav class="navbar">
         <ul>
             <li><a href="{% url 'home'%}"><img src="/static/Images/ByteBardLogo.png"></a></li>
-            <li><a href="{% url 'login'%}">Login</a></li>
-            <li><a href="{% url 'register'%}">Register</a></li>
+            {% if not user.is_authenticated %}
+                <li><a href="{% url 'login'%}">Login</a></li>
+                <li><a href="{% url 'register'%}">Register</a></li>
+            {% endif %}
         </ul>
     </nav>
 
     <main>
-        <h1>{%block content_title%} {%endblock%}</h1>
-        <hr>
         {% block content%}
 
         {% endblock %}
     </main>
+
+    {% block scripts %}
+
+    {% endblock %}
 </body>
