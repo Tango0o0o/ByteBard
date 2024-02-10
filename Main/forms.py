@@ -20,7 +20,6 @@ class LoginForm(forms.Form):
                {    
                 "class" : "form-input",
                 "placeholder" : "",
-                "id" : f"{field[3]}",
                 "required" : True
                 }
             ) # adding the class "form-input" to every field, to allow CSS changes to be made. Also added placeholder text for the input box
@@ -61,15 +60,15 @@ class CreateUserForm(UserCreationForm):
             ) # min password length of 8
 
         for field in self.fields:
-            print(field)
-            input_id = "'id" + "_"+ field + "'" # Setting the ids to be passed to the live/late validation functions (just saves rewriting code) puts it in the form 'id_fieldname'
-            label_id = "'input-label" + "-"+ field + "'"
+            css_class = "form-input" # default class ofc
+
+            if self[field].errors: # if there is an error in the form field, set the class to the invalid css for the red stuff
+                css_class = "form-input-invalid"
 
             self.fields[field].widget.attrs.update(
                     {
-                    "class" : "form-input",
-                    "placeholder" : "",
-                    "onkeydown" : f"reward_early({input_id}, {label_id})",
+                    "class" : css_class,
+                    "placeholder" : "", # For floating animation, see register.css
                     "required" : True,
                     "minlength" : "1"
                     }
