@@ -88,20 +88,7 @@ h1 {
     text-align: center;
 }
 
-.error-message{
-    color: red;
-    margin-top: -20px;
-    margin-bottom: 20px;
-    font-size: 15px;
-}
 
-.error-message + .form-input { /* The input that comes straight after the message should have red border */
-    border: solid red;
-}
-
-.error-message + .form-input + .input-label { /* And the label too */
-    color: red;
-}
 
 @keyframes floating-label { /* This is the floating label animation */
 
