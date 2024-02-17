@@ -15,29 +15,33 @@ ByteBard | Login
 
         <h1>Login to ByteBard</h1>
         <hr>
-
+        <div class="form-group">
         
-        <div class="form-group"> <!-- Grouping the fields togther 2 at a time-->
-
-            {% if not_found %} <!-- Error message if required -->
-                <div class="error-message">
-                    <strong>
-                        Incorrect username or password
-                    </strong>
-                </div>
-            {% endif %}
-        
-            <div class="input-group"> <!-- Naming probably a bit off tbf -->
+            <div class="input-group">
+                {% if form.username.errors %}
+                    {% for error in form.username.errors %}
+                        <div class="error-message">
+                            <strong>{{ error|escape }}</strong>
+                        </div>                  
+                    {% endfor %}
+                {% endif %}
                 {{form.username}}
                 <label class="input-label">Username</label>
             </div>
     
             <div class="input-group">
+                {% if form.password.errors %}
+                    {% for error in form.password.errors %}
+                        <div class="error-message">
+                            <strong>{{ error|escape }}</strong>
+                        </div>                  
+                    {% endfor %}
+                {% endif %}
                 {{form.password}}
                 <label class="input-label">Password</label>
             </div>
 
-        <button class="submit-btn" type="submit">Login</button>
+        <button class="submit-btn" type="submit">Login to ByteBard</button>
 
     </form>
 

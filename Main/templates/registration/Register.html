@@ -24,7 +24,7 @@ ByteBard | Register
         <div class="input-group">
             {% if form.first_name.errors %}
                 {% for error in form.first_name.errors %}
-                    <div class="error-message" id="id_first_name-error-message">
+                    <div class="error-message">
                         <strong>{{ error|escape }}</strong>
                     </div>                  
                 {% endfor %}
@@ -36,7 +36,7 @@ ByteBard | Register
         <div class="input-group">
             {% if form.last_name.errors %}
                 {% for error in form.last_name.errors %}
-                    <div class="error-message" id="id_last_name-error-message">
+                    <div class="error-message">
                         <strong>{{ error|escape }}</strong>
                     </div>                  
                 {% endfor %}
@@ -51,7 +51,7 @@ ByteBard | Register
         <div class="input-group">
             {% if form.username.errors %}
                 {% for error in form.username.errors %}
-                    <div class="error-message" id="id_username-error-message">
+                    <div class="error-message">
                         <strong>{{ error|escape }}</strong>
                     </div>                  
                 {% endfor %}
@@ -63,7 +63,7 @@ ByteBard | Register
         <div class="input-group">
             {% if form.email.errors %}
                 {% for error in form.email.errors %}
-                    <div class="error-message" id="id_email-error-message">
+                    <div class="error-message">
                         <strong>{{ error|escape }}</strong>
                     </div>                  
                 {% endfor %}
@@ -76,7 +76,7 @@ ByteBard | Register
     <div class="input-group">
         {% if form.password1.errors %}
             {% for error in form.password1.errors %}
-                <div class="error-message" id="id_password1-error-message">
+                <div class="error-message">
                     <strong>{{ error|escape }}</strong>
                 </div>                  
             {% endfor %}
