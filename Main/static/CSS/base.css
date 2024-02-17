@@ -1,9 +1,3 @@
-:root{
-    --red: rgb(255, 0, 0);
-    --grey: #f0f0f0;
-    --black: black;
-}
-
 body{
     background-color: aliceblue; /* Main colour gonna be used*/
     color: black; /* Makes sense to have black*/
@@ -72,24 +66,4 @@ ul::-webkit-scrollbar { /* For more modern popular browsers */
     background-color: #08cb94;
     transition: 1s;
     cursor: pointer;
-}
-
-.error-message{ /* error messages css */
-    color: red;
-    background-color: rgb(255, 0, 0, 0.3);
-    padding: 7px;
-    font-size: 15px;
-    margin-bottom: 10px;
-
-    display: block;
-
-    border-color: var(--grey); /*gray*/
-    border-radius: 6px;
-    border-style: solid;
-
-    height: fit-content; /* Takes up only space that the text does */
-    font-size: medium; /* Fills it not too much but big enough to read */
-    padding-left: 15px;
-    box-sizing: border-box; /* So it stays the same size even with padding */
-    width: 100%;
 }

@@ -56,10 +56,8 @@
 /* rgb(236, 246, 255) for matching alice blue*/
 .form-input{
     display: block;
-
-    color: var(--black);
     
-    border-color: var(--grey); /*gray*/
+    border-color: #f0f0f0; /*gray*/
     border-radius: 6px;
     border-style: groove;
 
@@ -70,30 +68,18 @@
     width: 100%;
 }
 
-.form-input:focus {
-    outline: 0px solid var(--grey);
-}
-
-.form-input-invalid{ /* The css for invalid for fields */
+.form-input1{
     display: block;
-
-    color: var(--red);
     
-    border-color: var(--red); /*red*/
+    border-color: #f0f0f0; /*gray*/
     border-radius: 6px;
-    border-style: solid;
-    border-width: 3px;
+    border-style: groove;
 
     height: 40px;
     font-size: medium; /* Fills it not too much but big enough to read */
     padding-left: 15px;
     box-sizing: border-box; /* So it stays the same size even with padding */
     width: 100%;
-}
-
-.form-input-invalid:focus{
-    border-color: var(--red);
-    outline: 0px solid var(--red); /* used this to hide the black that keeps showing over it */
 }
 
 /* wtf is this, learn this shi at a later date*/
@@ -114,6 +100,21 @@ input:-webkit-autofill:active {
 
 h1 {
     text-align: center;
+}
+
+.error-message{
+    color: red;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.error-message + .form-input { /* The input that comes straight after the message should have red border */
+    border: solid red;
+}
+
+.error-message + .form-input + .input-label { /* And the label too */
+    color: red;
 }
 
 @keyframes floating-label { /* This is the floating label animation */
