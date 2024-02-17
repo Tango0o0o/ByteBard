@@ -116,13 +116,6 @@ h1 {
     text-align: center;
 }
 
-.error-message{
-    color: red;
-    margin-top: -20px;
-    margin-bottom: 20px;
-    font-size: 15px;
-}
-
 @keyframes floating-label { /* This is the floating label animation */
 
     0% {
