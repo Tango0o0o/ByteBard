@@ -14,7 +14,7 @@ for (const id of field_ids) { // This will loop through every element in the for
             }
 
             else {
-                input.className = "form-input-invalid"; // See register.css // 1. If not then put it on the invalid class
+                input.className = "form-input invalid"; // See register.css // 1. If not then put it on the invalid class
                 document.getElementById(id+"-error-message").style.display = "block" // Make the error message visible
             }
         }

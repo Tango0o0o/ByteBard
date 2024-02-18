@@ -6,19 +6,21 @@ from django.contrib.auth import login, authenticate, logout
 from .forms import CreateUserForm, LoginForm
 # Create your views here.
 
-def is_authenticated(user): # this is to check whether the user is already logged in
+def is_authenticated_func(user): # this is to check whether the user is already logged in
     return user.is_authenticated
     
 
 def home(req):
     template = loader.get_template('home.html')
-    return HttpResponse(template.render())
+    return HttpResponse(template.render(context={"logged_in":is_authenticated_func(req.user)}))
 
 def loginview(req):
+    form = LoginForm()
+
     
     not_found = False
 
-    if is_authenticated(req.user) == True: # if you are logged in, you can't access this page
+    if is_authenticated_func(req.user) == True: # if you are logged in, you can't access this page
         return redirect(reverse("home"))
 
     if req.method == "POST":
@@ -28,19 +30,18 @@ def loginview(req):
         username = req.POST["username"]
         password = req.POST["password"]
         user = authenticate(req=req, username=username, password=password) # verifies that the credentials are valid
-
+        
         if user is not None: # log the user in if there is one, and send to home page
             login(request=req,user=user) 
             return redirect(reverse("home"))
         
         else: # If there is no user, make not_found true to trigger error message ni the template 
             not_found = True
-
-    form = LoginForm()
+    form.password = ""
     return render(req, 'authentication/login.html', {"form":form, "not_found":not_found})
 
 def register(req):
-    if is_authenticated(req.user) == True: # if you are logged in, you can't access this page
+    if is_authenticated_func(req.user) == True: # if you are logged in, you can't access this page
         return redirect(reverse("home"))
     
     if req.method == "POST":

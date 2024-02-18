@@ -1,4 +1,6 @@
 /* https://www.gerireid.com */
+/* Also used for login.css */
+
 .wrapper > *{ /* All items chlid to the wrapper */
     max-width: 100%; /* Don't go bigger than container */
     margin: auto; /* Horizontally centtering */
@@ -53,6 +55,7 @@
     pointer-events: none;
 }
 
+
 /* rgb(236, 246, 255) for matching alice blue*/
 .form-input{
     display: block;
@@ -74,21 +77,9 @@
     outline: 0px solid var(--grey);
 }
 
-.form-input-invalid{ /* The css for invalid for fields */
-    display: block;
-
+.invalid{ /* The css for invalid for fields */
     color: var(--red);
-    
     border-color: var(--red); /*red*/
-    border-radius: 6px;
-    border-style: solid;
-    border-width: 3px;
-
-    height: 40px;
-    font-size: medium; /* Fills it not too much but big enough to read */
-    padding-left: 15px;
-    box-sizing: border-box; /* So it stays the same size even with padding */
-    width: 100%;
 }
 
 .form-input-invalid:focus{

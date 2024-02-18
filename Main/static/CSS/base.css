@@ -2,10 +2,11 @@
     --red: rgb(255, 0, 0);
     --grey: #f0f0f0;
     --black: black;
+    --onhover: rgb(246, 246, 246);
 }
 
 body{
-    background-color: aliceblue; /* Main colour gonna be used*/
+    background-color: rgb(240, 248, 255); /* Main colour gonna be used*/
     color: black; /* Makes sense to have black*/
     margin: 0px; /* Removes all margins, so the navbar can stick to the top*/
 }
@@ -21,13 +22,13 @@ body{
 
 .navbar ul{
     list-style-type: none; /* Remove the bullets in the list*/
-    background-color: #f7fff9; /* pastel green to match alice blue */
+    background-color: white;
     padding: 0px; /* Take away all the padding around the ul */
     margin: 0px; /* And the margin */
     overflow: scroll; /* If the list goes bigger than the navbar, then don't show it */
 }
 
-.navbar a{
+.primary-tab {
     text-decoration: none; /* Remove underline from the links */
     padding: 15px 25px 15px 25px; /* Make it look a bit bigger */
     display: block; /* Giving each link the full width of its container on a new line as well */ 
@@ -37,8 +38,17 @@ body{
     height: 25px; 
 }
 
-.navbar a:hover{ /* Change of background colour when you hover over the mouse */
-    background-color: aliceblue; /* Nice tranistion to the main bacground colout */
+.navbar .selected {
+    background-color: aliceblue;
+    font-weight: 900;
+}
+
+.navbar .selected:hover {
+    background-color: aliceblue;
+}
+
+.primary-tab:hover{ /* Change of background colour when you hover over the mouse */
+    background-color: var(--onhover); /* Nice tranistion to the main bacground colout */
     transition: 1s; /* Fade effect */
 }
 
@@ -46,6 +56,11 @@ body{
     width: 25px; 
     height: 25px; /* This pretty much sets the height of the navbar */
     text-align: center; /* center the logo */
+}
+
+.siteid{
+    display: flex;
+    float: left;
 }
 
 main{

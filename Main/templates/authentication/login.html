@@ -5,12 +5,15 @@ ByteBard | Login
 {%endblock%}
 
 {%block head%}
+    <!-- reusing register.css because there's no point in repeating so much code -->
+    <!-- Still need login.css because some small changes are needed-->
+    <link rel="stylesheet" rel="text/css" href="/static/CSS/register.css"> 
     <link rel="stylesheet" rel="text/css" href="/static/CSS/login.css">
 {% endblock %}
 
 {% block content %}
 
-    <form method="post" action="" class="wrapper">
+    <form method="post" action="" class="wrapper login-wrapper">
         {% csrf_token %}
 
         <h1>Login to ByteBard</h1>
@@ -38,7 +41,7 @@ ByteBard | Login
             </div>
 
         <button class="submit-btn" type="submit">Login</button>
-
+        
     </form>
 
 {% endblock %}

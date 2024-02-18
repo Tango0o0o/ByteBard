@@ -63,7 +63,7 @@ class CreateUserForm(UserCreationForm):
             css_class = "form-input" # default class ofc
 
             if self[field].errors: # if there is an error in the form field, set the class to the invalid css for the red stuff
-                css_class = "form-input-invalid"
+                css_class = "form-input invalid"
 
             self.fields[field].widget.attrs.update(
                     {
