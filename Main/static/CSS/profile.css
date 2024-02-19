@@ -1,0 +1,7 @@
+#id_password1{
+    background-color: var(--grey);
+} /* making the password input look disabled*/
+
+.form-input {
+    border-color: rgb(2, 219, 2);
+} /* indicating that all inputs/data is valid on arrival*/

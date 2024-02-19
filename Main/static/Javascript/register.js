@@ -20,3 +20,5 @@ for (const id of field_ids) { // This will loop through every element in the for
         }
     );
 }
+
+// ERROR: WHEN TYPING, THEN REVERTING BACK TO PREVIOUS INPUT, DISPLAYS ERROR INDICATORS DESPITE THERE NOT BEING ONE IN FORMS

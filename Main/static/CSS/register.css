@@ -72,10 +72,11 @@
     box-sizing: border-box; /* So it stays the same size even with padding */
     width: 100%;
 }
-
+/* not sure what the purpose of it here is
 .form-input:focus {
     outline: 0px solid var(--grey);
 }
+*/
 
 .invalid{ /* The css for invalid for fields */
     color: var(--red);

@@ -52,6 +52,11 @@ body{
     transition: 1s; /* Fade effect */
 }
 
+#profile { 
+    float: right;
+    border-left: 3px aliceblue solid;
+}
+
 .navbar img{
     width: 25px; 
     height: 25px; /* This pretty much sets the height of the navbar */

@@ -79,3 +79,15 @@ class CreateUserForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', "first_name", "last_name"] # Adding the fields
+
+class UpdateUserForm(CreateUserForm): # slight tweaks to the user
+    
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        super().__init__(*args, **kwargs)
+        self.fields["password1"].widget.attrs.update( # can't access users passwords, no need to show them anyway
+            {
+                "value" : "1234567890123",
+                "disabled" : True,
+                "readonly" : True
+            }
+        )

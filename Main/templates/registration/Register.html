@@ -83,8 +83,10 @@ ByteBard | Register
         {% endif %}
         {{form.password1}}
         <label class="input-label" id="input-label-password">Password</label>
-    </div>
+        {% block reset_pass%} <!-- reused in profile.html-->
 
+        {% endblock %}
+    </div>
 
     <button class="submit-btn" type="submit">Sign up</button>
 
