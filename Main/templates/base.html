@@ -23,16 +23,16 @@
         <ul>
 
             <li>
-                <a class="primary-tab siteid" id="home" href="{% url 'home'%}"><img src="/static/Images/ByteBardLogo.png">
+                <a class="primary-tab siteid" id="home" href="{% url 'home'%}">
+                    <img src="/static/Images/ByteBardLogo.png" alt="ByteBard home">
                     &nbsp;
-                    <span>ByteBard</span>
                 </a>
             </li>
             {% if not user.is_authenticated %} <!--Make sure to add tab id to base.js-->
-                <li><a class="primary-tab" id="login" href="{% url 'login'%}">Login</a></li>
+                <li><a class="primary-tab" a id="login" href="{% url 'login'%}">Login</a></li>
                 <li><a class="primary-tab" id="register" href="{% url 'register'%}">Register</a></li>
-            {% else %}
-                <li><a class="primary-tab" id="profile" href="{% url 'profile'%}">{{ user.username }}</a></li>
+            {% else %} 
+                <li><a class="primary-tab" id="profile" href="{% url 'profile'%}"><img src="/static/Images/profile_pics/default.png"></a></li>
             {% endif %}
 
         </ul>

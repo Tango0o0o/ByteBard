@@ -61,15 +61,21 @@ class CreateUserForm(UserCreationForm):
 
         for field in self.fields:
             css_class = "form-input" # default class ofc
+            error = False # custom attribute to see if there is an  in the field or not
 
             if self[field].errors: # if there is an error in the form field, set the class to the invalid css for the red stuff
                 css_class = "form-input invalid"
+                error = True
+
 
             self.fields[field].widget.attrs.update(
                     {
                     "class" : css_class,
+                    "error" : error,
                     "placeholder" : "", # For floating animation, see register.css
                     "required" : True,
+                    "aria-required" : True,
+                    "aria-label" : self.fields[field].label,
                     "minlength" : "1"
                     }
                 ) # adding the class "form-input" to every field, to allow CSS changes to be made. Also added placeholder text for the input box

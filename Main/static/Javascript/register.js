@@ -3,22 +3,27 @@ const field_ids = ["id_email", "id_password1", "id_username", "id_first_name", "
 for (const id of field_ids) { // This will loop through every element in the form field
     // And then procced to change the class of the input depending on whether it is valid or not
 
-    let input = document.getElementById(id); // Form field
-    const value = input.value; // The input of the form field (valid or invalid)
+    let field = document.getElementById(id);
+    if (field.hasAttribute("error")) { 
+        // If the field has the attribute error, this means hat there is an error in the field, and this code should apply to that field
+       
+        const value = field.value; // The value of the form field
 
-    input.addEventListener('input', function() // Triggered when input is enter in text field
-        {
-            if (value != input.value) { // 1. Checking if the invalid input has been changed
-                input.className = "form-input"; // See register.css // 1. If so then change it to the normal input field
-                document.getElementById(id+"-error-message").style.display = "none" // Hide the error message
-            }
+        field.addEventListener('input', function() // Triggered when input is enter in text field
+            {
+                if (value != field.value) { // 1. Checking if the invalid input has been changed
+                    field.className = "form-input"; // See register.css // 1. If so then change it to the normal input field
+                    document.getElementById(id+"-error-message").style.display = "none" // Hide the error message
+                }
 
-            else {
-                input.className = "form-input invalid"; // See register.css // 1. If not then put it on the invalid class
-                document.getElementById(id+"-error-message").style.display = "block" // Make the error message visible
+                else {
+                    field.className = "form-input invalid"; // See register.css // 1. If not then put it on the invalid class
+                    document.getElementById(id+"-error-message").style.display = "block" // Make the error message visible
+                }
             }
-        }
-    );
+        );
+    }
 }
 
-// ERROR: WHEN TYPING, THEN REVERTING BACK TO PREVIOUS INPUT, DISPLAYS ERROR INDICATORS DESPITE THERE NOT BEING ONE IN FORMS
+
+// TEST ON PROFILE PAGE, ERROR FIXED ON REGITSER THOUGH

@@ -5,3 +5,7 @@
 .form-input {
     border-color: rgb(2, 219, 2);
 } /* indicating that all inputs/data is valid on arrival*/
+
+.reset-pass {
+    top: 0;
+}

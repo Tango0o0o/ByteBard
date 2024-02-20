@@ -1,10 +1,21 @@
 {% extends 'registration/Register.html'%} <!-- literally ctrl-c ctrl-v, exact same form info, might as well reuse-->
 
+
+{%block title%}
+ByteBard | Update profile
+{%endblock%}
+
 {% block head %} <!-- Cancels out the block head in register.css -->
     <link rel="stylesheet" rel="text/css" href="/static/CSS/register.css">
     <link rel="stylesheet" rel="text/css" href="/static/CSS/profile.css"> <!-- CSS that loads last gets higher priority -->
 {% endblock %}
 
+{% block page-name %}
+Update profile
+{% endblock %}
+
 {% block reset_pass %} <!-- Needed to add reset pass, so added new block-->
-    <span><a>Reset password</a></span>
+    <div class="reset-pass"><a href="#">Reset password</a></div>
 {% endblock%}
+
+{%block submit-text%}Update{%endblock%}

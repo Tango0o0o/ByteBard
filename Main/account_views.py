@@ -49,7 +49,7 @@ def register(req):
         
         else:
             return render(req, 'registration/Register.html', {"form":form}) # return form with the errors
-
+    
     form = CreateUserForm()
     return render(req, 'registration/Register.html', {"form":form})
 
